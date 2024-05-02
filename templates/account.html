@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后排男团web-server</title>
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../css/account.css">
+</head>
+<body>
+    <div class="top">
+        <div class="body_title">我的</div>
+    </div>
+    <div>当前登录用户名:
+        <div class="username">{{username}}</div>
+    </div>
+    <button type="button"  class="logout" onclick="location.href=('/hpnt/logout');">退出登录</button>
+    <table align="center">
+        <tr>
+            <td>
+                <button type="button" onclick="location.href=('/hpnt');">
+                    <img src="../img/index.png" alt="index">
+                    <p>主页</p>
+                </button>
+            </td>
+            <td>
+                <button type="button" onclick="location.href=('/hpnt/chat');">
+                    <img src="../img/chat.png" alt="chat">
+                    <p>聊天</p>
+                </button>
+            </td>
+            <td>
+                <button type='button' onclick="location.href=('/hpnt/download');">
+                    <img src="../img/download.png" alt="download">
+                    <p>文件</p>
+                </button>
+            </td>
+            <td>
+                <button type='button'>
+                    <img src="../img/mine_full.png" alt="mine">
+                    <p>我的</p>
+                </button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,56 @@
+body{
+    background-image: url("../img/bj.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 93%;
+    color: aqua;
+    background-color: black;
+}
+h1{
+    /* color: aqua; */
+    text-align: center;
+    font-size: 40px;
+}
+table{
+    border:1px solid aqua;
+    border-collapse:collapse;
+}
+td{
+    border:1px solid aqua; 
+    border-collapse:collapse;
+    /* color: aqua; */
+    font-size: 20px;
+    padding: 20px
+}
+.download{
+    width: 75px;
+    height: 35px;
+    text-align: center;
+    border-radius: 10px;
+    font:16px;
+    background-color: white;
+}
+.reten{
+    width: 95px;
+    height: 35px;
+    text-align: center;
+    border-radius: 10px;
+    font:16px;
+    background-color: white;
+}
+.di{
+    color: black;
+    width: 100%;
+    height: 20%;
+    text-align:center;
+    position: fixed; 
+    bottom:0px;
+}
+.jy{
+    color: rgb(255, 255, 255);
+    font:15px '宋体';
+    text-align:center;
+    position: fixed; 
+    bottom:0px;
+    width: 100%;
+}

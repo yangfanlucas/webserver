@@ -1,0 +1,92 @@
+﻿body{
+    background: url(../img/bj.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 92%;
+    background-color: black;
+}
+.wylt{
+    border-radius: 15px;
+    /* margin-left: 25%; */
+    opacity: 85%;
+    background-color: #E1E9EF;
+    width: 96%;
+    height: 70%;
+    font-size: 30px;
+    position: fixed; 
+}
+.jia{
+    font-size: 20px;
+}
+.neirong{
+    font-size: 40%;
+    margin-left: 10%;
+    width: 85%;
+    height: 78%; 
+}
+.neirong div{
+    border-radius: 10px;
+}
+.neirong a{
+    border-radius: 10px;
+}
+.lt{
+    background-color: green;
+    border-radius: 15px;
+    width: fit-content;
+    height: fit-content;
+    font-size: 20px;
+}
+.di{
+    color: black;
+    width: 100%;
+    text-align:center;
+    position: fixed; 
+    bottom:0px;
+}
+.jy{
+    color: rgb(255, 255, 255);
+    font:15px '宋体';
+    text-align:center;
+    position: fixed; 
+    bottom:0px;
+    width: 100%;
+}
+.textinput{
+    height: 100%;
+    width: 60%;
+    padding: 0 35px;
+    border: none;
+    background: #F8F9F9;
+    font-size: 10px;
+    box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.7), inset 0px 2px 5px #aaaaaa;
+    border-radius: 5px;
+    color: saddlebrown;
+}
+input[type="submit"]{
+    width: 15%;
+    height: 100%;
+    text-align: center;
+    border-radius: 10px;
+    font:16px;
+    background-color: #C0C6CB;
+}
+form{
+    /* padding: 0px 0px; */
+    font-size: 10px;
+    height: 6%;
+    /* border-radius: 20px; */
+    /* opacity: 85%; */
+}
+h3{
+    color: red;
+}
+a{
+   color: blue;
+}
+input[type="file"]{
+   color: blue;
+}
+iframe{
+    border: none;
+}

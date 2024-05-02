@@ -1,0 +1,27 @@
+﻿.jia{
+    font-size: 20px;
+}
+.neirong{
+    font-size: 40%;
+    width: 96%;
+    height: 60em; 
+    overflow: auto;
+}
+::-webkit-scrollbar {
+        width: 0px;
+    }
+.neirong div{
+    border-radius: 10px;
+}
+.neirong a{
+    border-radius: 10px;
+}
+.lt{
+    background-color: green;
+    border-radius: 15px;
+    width: fit-content;
+    height: fit-content;
+    font-size: 20px;
+}
+a{
+   color: blue;
