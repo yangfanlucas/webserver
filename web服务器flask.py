@@ -142,5 +142,5 @@ def change_password():
 
 
 if __name__ == '__main__':
-    server = WSGIServer(('0.0.0.0', 8443), app, certfile='./www.yangfanserver.xyz.pem', keyfile='./www.yangfanserver.xyz.key')
+    server = WSGIServer(('0.0.0.0', 8443), app, certfile='', keyfile='')
     server.serve_forever()
