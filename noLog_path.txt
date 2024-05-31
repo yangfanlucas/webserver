@@ -1,16 +1,7 @@
-<<<<<<< HEAD
 /?
 /hpnt/log?
 /hpnt/login?
-/css/login.css?
-/js/login.js?
-/img/bj.jpg?
-=======
-/?
-/hpnt/log?
-/hpnt/login?
-/css/login.css?
-/js/login.js?
-/img/bj.jpg?
->>>>>>> 68743d3 (2024.5.2(ssh))
-/favicon.ico?
+/static/css/login.css?
+/static/js/login.js?
+/static/img/bj.jpg?
+/static/favicon.ico?

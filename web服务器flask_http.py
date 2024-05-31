@@ -14,8 +14,6 @@ def before_request():
     path = request.full_path
     with open("noLog_path.txt", "r") as f:
         notLog_path_list = f.read().splitlines()
-    if request.host != "www.yangfanserver.xyz":
-        return redirect("https://www.yangfanserver.xyz/")
     if user not in users_list and path not in notLog_path_list:
         return redirect('/hpnt/log')
 
@@ -27,7 +25,7 @@ def i():
 
 @app.route("/hpnt")
 def a():
-    return render_template('index.html', a="（若访问非常卡顿，可访问server.yangfanserver.xyz:2052)")
+    return render_template('index.html', a="")
 
 
 @app.route("/hpnt/log")
@@ -100,9 +98,9 @@ def chatimg():
     lt = time.strftime(" %Y-%m-%d %H:%M", time.localtime())
     img = request.files.get('img')
     try:
-        img.save('./static/img/user/'+img.filename)
-    except Exception as e:
-        print("nnn")
+        path = "./static/img/user/"+img.filename
+        img.save(path)
+    except Exception as e:        
         return redirect('/hpnt/chat')
     else:
         with open("liaotian.txt", "a", encoding='utf-8') as fi:
@@ -164,5 +162,5 @@ def liaotian():
 
 
 if __name__ == '__main__':
-    server = WSGIServer(('0.0.0.0', 8443), app, certfile='./www.yangfanserver.xyz.pem', keyfile='./www.yangfanserver.xyz.key')
+    server = WSGIServer(('0.0.0.0', 2052), app)
     server.serve_forever()

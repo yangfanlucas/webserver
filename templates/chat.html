@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>聊天网页</title>
-    <link rel="stylesheet" type="text/css" href="../css/chat.css">
-    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../static/css/chat.css">
+    <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <button class="reten" onclick="jump_to_index();" method="get"><-返回主页</button>
     <h3>聊天内容部分每30秒自动刷新</h3>
     <button onclick="showNotification()">消息提醒测试</button>
     <div class="wylt">网页聊天器v2.0（Beta）
@@ -18,7 +19,7 @@
             <div class="jia">B</div>
             <div class="lt" id="jia_lt">example</div>
         </div> -->
-        <iframe src="/static/liaotian.html" class="neirong" id="f"></iframe >
+        <iframe src="/hpnt/liaotian" class="neirong" id="f"></iframe >
         <form action="/hpnt/chattext" method="post">
                 <input type="text" name="text" class="textinput" placeholder="请输入要发送的文字">
                 <input type="submit" value="发送">    
@@ -29,6 +30,7 @@
                 <input type="submit" value="发送">    
          </form>
     </div> 
-    <script type="text/javascript" src="../js/Notification.js"></script>
+    <script type="text/javascript" src="../static/js/chat.js"></script>
+    <script type="text/javascript" src="../static/js/Notification.js"></script>
 </body>
 </html>

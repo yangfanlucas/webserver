@@ -5,41 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>后排男团web-server</title>
-    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css">
 </head>
 <body>
     <div class="top">
         <div class="body_title">后排男团{{a}}</div>
     </div>
+    <a style="color: red;font-size: 3em;">New：</br></a>
+    <div>翻译功能现可用！！</br>
+            使用方法：www.yangfanserver.xyz/hpnt/trans?query=要翻译的内容&to_lang=zh或en</br>
+            (没空写单独的网页了，先手打网址凑合一下吧）
+    </div>
     <table align="center">
         <tr>
             <td>
                 <button type="button">
-                    <img src="../img/index_full.png" alt="index">
+                    <img src="../static/img/index_full.png" alt="index">
                     <p>主页</p>
                 </button>
             </td>
             <td>
                 <button type="button" onclick="location.href=('/hpnt/chat');">
-                    <img src="../img/chat.png" alt="chat">
+                    <img src="../static/img/chat.png" alt="chat">
                     <p>聊天</p>
                 </button>
             </td>
             <td>
                 <button type='button' onclick="location.href=('/hpnt/download');">
-                    <img src="../img/download.png" alt="download">
+                    <img src="../static/img/download.png" alt="download">
                     <p>文件</p>
                 </button>
             </td>
             <td>
                 <button type='button' onclick="location.href=('/hpnt/account');">
-                    <img src="../img/mine.png" alt="mine">
+                    <img src="../static/img/mine.png" alt="mine">
                     <p>我的</p>
                 </button>
             </td>
         </tr>
     </table>
 </body>
-<script type="text/javascript" src="../js/index.js"></script>
+<script type="text/javascript" src="../static/js/index.js"></script>
 </html>
