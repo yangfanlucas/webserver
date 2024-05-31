@@ -2,8 +2,8 @@ import requests, random, json
 from hashlib import md5
 
 def trans(query, to_lang):
-    appid = '20240506002043631'
-    appkey = 'uJeQy0BBwHNVe998nG5O'
+    appid = ''
+    appkey = ''
     url = 'http://api.fanyi.baidu.com/api/trans/vip/translate'
     salt = random.randint(32768, 65536)
     s = appid + query + str(salt) + appkey
