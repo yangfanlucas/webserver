@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>聊天网页</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/chat.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后排男团web-server</title>
     <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../static/css/chat.css">
 </head>
 <body>
-    <button class="reten" onclick="jump_to_index();" method="get"><-返回主页</button>
-    <h3>聊天内容部分每30秒自动刷新</h3>
-    <button onclick="showNotification()">消息提醒测试</button>
-    <div class="wylt">网页聊天器v2.0（Beta）
+    <div class="top">
+        <div class="body_title">后排男团{{a}}</div>
+    </div>
+    <div class="wylt">网页聊天器v3.0
         <!--<div class="neirong" id="nr">
             <div class="jia">A</div>
             <div class="lt" id="jia_lt">example</div>
@@ -22,15 +22,42 @@
         <iframe src="/hpnt/liaotian" class="neirong" id="f"></iframe >
         <form action="/hpnt/chattext" method="post">
                 <input type="text" name="text" class="textinput" placeholder="请输入要发送的文字">
-                <input type="submit" value="发送">    
+                <input type="submit" value="发送文字">    
         </form>
         <form action="/hpnt/chatimg" method="post" enctype='multipart/form-data'>
-                <a>发送图片（视频）</a>
-                <input type='file' accept="image/*, video/*" name='img' placeholder ="发送图片（视频）">
-                <input type="submit" value="发送">    
+                <input type='file' accept="image/*, video/*" name='img'>
+                <input type="submit" value="发送文件">    
          </form>
     </div> 
     <script type="text/javascript" src="../static/js/chat.js"></script>
-    <script type="text/javascript" src="../static/js/Notification.js"></script>
+    <table align="center">
+        <tr>
+            <td>
+                <button type="button">
+                    <img src="../static/img/index.png" alt="index">
+                    <p>主页</p>
+                </button>
+            </td>
+            <td>
+                <button type="button" onclick="location.href=('/hpnt/chat');">
+                    <img src="../static/img/chat_full.png" alt="chat">
+                    <p>聊天</p>
+                </button>
+            </td>
+            <td>
+                <button type='button' onclick="location.href=('/hpnt/download');">
+                    <img src="../static/img/download.png" alt="download">
+                    <p>文件</p>
+                </button>
+            </td>
+            <td>
+                <button type='button' onclick="location.href=('/hpnt/account');">
+                    <img src="../static/img/mine.png" alt="mine">
+                    <p>我的</p>
+                </button>
+            </td>
+        </tr>
+    </table>
 </body>
+<script type="text/javascript" src="../static/js/chat.js"></script>
 </html>

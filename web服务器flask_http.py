@@ -104,7 +104,7 @@ def chatimg():
         return redirect('/hpnt/chat')
     else:
         with open("liaotian.txt", "a", encoding='utf-8') as fi:
-            fi.write(user+"："+img.filename+"\n")
+            fi.write(user+"："+"（文件）"+img.filename+"\n")
         with open("liaotian.js", "a", encoding='utf-8') as f:
             f.write("\n"
                     "var div = document.createElement('div');\n"
@@ -113,7 +113,7 @@ def chatimg():
                     "var yn_div = document.getElementById('nr');\n"
                     "yn_div.appendChild(div);\n"
                     "var div = document.createElement('a');\n"
-                    "div.innerHTML = '图片（视频）,请点击查看';\n"
+                    "div.innerHTML = '请点击';\n"
                     "div.className = 'lt';\n"
                     "var yn_div = document.getElementById('nr');\n"
                     "yn_div.appendChild(div);\n"
