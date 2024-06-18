@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, session
+from flask import Flask, render_template, request, redirect, session, flash
 from gevent.pywsgi import WSGIServer
 import random, time, os
 
@@ -63,48 +63,20 @@ def download():
     return render_template('download.html')
 
 
-@app.route("/hpnt/chattext", methods=['POST'])
-def chattext():
+@app.route("/hpnt/chatpost", methods=["POST"])
+def chatpost():
     user = session.get("user")
     text = request.form["text"]
-    l = [1, 2]
-    r = random.choice(l)
     lt = time.strftime(" %Y-%m-%d %H:%M", time.localtime())
-    if text == '':
-        return redirect("/hpnt/chat")
-    else:
-        with open("liaotian.txt", "a", encoding='utf-8') as fi:
-            fi.write(user+"："+text+"\n")
-        with open("liaotian.js", "a", encoding='utf-8') as f:
-            f.write("\n"
-                    "var div = document.createElement('div');\n"
-                    "div.innerText = '"+user+lt+"';\n"
-                    "div.className = 'jia';\n"
-                    "var yn_div = document.getElementById('nr');\n"
-                    "yn_div.appendChild(div);\n"                        
-                    "var div = document.createElement('div');\n"
-                    "div.innerText = '"+text+"';\n"
-                    "div.className = 'lt';\n"
-                    "var yn_div = document.getElementById('nr');\n"
-                    "yn_div.appendChild(div);\n")
-        return redirect('/hpnt/chat')
-
-
-@app.route("/hpnt/chatimg", methods=['POST'])
-def chatimg():
-    user = session.get("user")
-    l = [1, 2]
-    r = random.choice(l)
-    lt = time.strftime(" %Y-%m-%d %H:%M", time.localtime())
-    img = request.files.get('img')
+    file = request.files.get('file')
     try:
-        path = "./static/img/user/"+img.filename
-        img.save(path)
+        path = "./static/files/"+file.filename
+        file.save(path)   
     except Exception as e:        
-        return redirect('/hpnt/chat')
+        pass
     else:
         with open("liaotian.txt", "a", encoding='utf-8') as fi:
-            fi.write(user+"："+"（文件）"+img.filename+"\n")
+            fi.write(user+"："+"（文件）"+file.filename+"\n")
         with open("liaotian.js", "a", encoding='utf-8') as f:
             f.write("\n"
                     "var div = document.createElement('div');\n"
@@ -117,8 +89,26 @@ def chatimg():
                     "div.className = 'lt';\n"
                     "var yn_div = document.getElementById('nr');\n"
                     "yn_div.appendChild(div);\n"
-                    "div.onclick = function(){window.open('/static/img/user/"+img.filename+"');};\n")
-        return redirect('/hpnt/chat')
+                    "div.onclick = function(){window.open('/static/files/"+file.filename+"');};\n")
+    finally:
+        if text == '':
+            return redirect("/hpnt/chat")
+        else:
+            with open("liaotian.txt", "a", encoding='utf-8') as fi:
+                fi.write(user+"："+text+"\n")
+            with open("liaotian.js", "a", encoding='utf-8') as f:
+                f.write("\n"
+                        "var div = document.createElement('div');\n"
+                        "div.innerText = '"+user+lt+"';\n"
+                        "div.className = 'jia';\n"
+                        "var yn_div = document.getElementById('nr');\n"
+                        "yn_div.appendChild(div);\n"                        
+                        "var div = document.createElement('div');\n"
+                        "div.innerText = '"+text+"';\n"
+                        "div.className = 'lt';\n"
+                        "var yn_div = document.getElementById('nr');\n"
+                        "yn_div.appendChild(div);\n")
+            return redirect('/hpnt/chat')
 
 
 @app.route('/hpnt/logout')
@@ -162,5 +152,5 @@ def liaotian():
 
 
 if __name__ == '__main__':
-    server = WSGIServer(('0.0.0.0', 2052), app)
+    server = WSGIServer(('0.0.0.0', 8090), app)
     server.serve_forever()

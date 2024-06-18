@@ -20,14 +20,12 @@
             <div class="lt" id="jia_lt">example</div>
         </div> -->
         <iframe src="/hpnt/liaotian" class="neirong" id="f"></iframe >
-        <form action="/hpnt/chattext" method="post">
-                <input type="text" name="text" class="textinput" placeholder="请输入要发送的文字">
-                <input type="submit" value="发送文字">    
+        <form action="/hpnt/chatpost" method="post" id="form1" enctype='multipart/form-data'>
+                <input type="text" name="text" class="textinput" placeholder="请输入要发送的文字"> 
+                <br>
+                <input type='file' name='file'>
+                <input type="submit" value="发送">     
         </form>
-        <form action="/hpnt/chatimg" method="post" enctype='multipart/form-data'>
-                <input type='file' accept="image/*, video/*" name='img'>
-                <input type="submit" value="发送文件">    
-         </form>
     </div> 
     <script type="text/javascript" src="../static/js/chat.js"></script>
     <table align="center">
